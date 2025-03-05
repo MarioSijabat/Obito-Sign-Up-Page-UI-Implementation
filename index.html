@@ -212,7 +212,8 @@
                 id="name"
                 name="name"
                 placeholder="Type your complete name"
-                class="w-full pl-10 pr-3 py-2 border border-gray-150 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 font-normal placeholder-normal focus:font-semibold"
+                class="w-full pl-10 pr-3 py-2 border border-gray-150 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 font-normal placeholder-normal"
+                oninput="toggleBold(this)"
               />
             </div>
           </div>
@@ -234,7 +235,8 @@
                 id="occupation"
                 name="occupation"
                 placeholder="Type your occupation"
-                class="w-full pl-10 pr-3 py-2 border border-gray-150 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 font-normal placeholder-normal focus:font-semibold"
+                class="w-full pl-10 pr-3 py-2 border border-gray-150 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 font-normal placeholder-normal"
+                oninput="toggleBold(this)"
               />
             </div>
           </div>
@@ -254,10 +256,24 @@
                 id="email"
                 name="email"
                 placeholder="Type your valid email address"
-                class="w-full pl-10 pr-3 py-2 border border-gray-150 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 font-normal placeholder-normal focus:font-semibold"
+                class="w-full pl-10 pr-3 py-2 border border-gray-150 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 font-normal placeholder-normal"
+                oninput="toggleBold(this)"
               />
             </div>
           </div>
+
+          <script>
+            function toggleBold(inputElement) {
+              // Add bold class if text exists, else remove it
+              if (inputElement.value.trim() !== "") {
+                inputElement.classList.add("font-semibold");
+                inputElement.classList.remove("font-normal");
+              } else {
+                inputElement.classList.remove("font-semibold");
+                inputElement.classList.add("font-normal");
+              }
+            }
+          </script>
 
           <div class="mb-4">
             <label
